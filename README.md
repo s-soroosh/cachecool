@@ -5,8 +5,11 @@
 What is cachecool?
 ------------------
 
+Cachecool is the english pronounciation of "کشکول" in Persian what is a nice container like what you see here. What cachecool try to do is giving you the same experience of serving  sweets or fruits in cachecool (or kashkool) but about the data.
+
 Cachecool is a flexible cache facade that helps you to configure the most popular cache engines in an easy way.
 Besides configuring cache engines, cachecool try to facilitate designing multi-level caching.
+
 
 What is the current Stage?
 -------------------------
