@@ -6,7 +6,7 @@ import scala.concurrent.duration.Duration
 /**
   * Created by nscherer on 21/01/16.
   */
-object TransientCache extends OctopusCache {
+object TransientCache extends GenericCache {
 
   override val name: String = "Transient"
 
@@ -16,6 +16,6 @@ object TransientCache extends OctopusCache {
 
   override def _put[A](key: String, obj: A, duration: Option[Duration]): Future[Unit] = Future.successful(())
 
-  override def _removeFromCache(key: String): Future[Unit] = Future.successful(())
+  override def _remove(key: String): Future[Unit] = Future.successful(())
 
 }
