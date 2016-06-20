@@ -9,7 +9,7 @@ import play.api.inject.Injector
 /**
   * Created by ssarabadani on 07/06/16.
   **/
-class FakeCaching @Inject()(@Named("memory") override val usedCache: OctopusCache) extends CachingSupport
+class FakeCaching @Inject()(@Named("memory") override val usedCache: GenericCache) extends CachingSupport
 
 class CachingSupportSpec extends PlaySpec with AcceptanceTestSuite {
   var c: FakeCaching = null
@@ -18,7 +18,7 @@ class CachingSupportSpec extends PlaySpec with AcceptanceTestSuite {
     c = injector.instanceOf[FakeCaching]
   }
 
-  "injected octopus cache" should {
+  "injected cachecool cache" should {
     "override the default one" in {
       assert(c.usedCache.name == "memory")
     }

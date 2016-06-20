@@ -14,15 +14,15 @@ import scala.concurrent.duration._
   */
 
 
-class OctopusCacheModuleSpec extends PlaySpec with AcceptanceTestSuite {
-  var memoryCache: OctopusCache = null
-  var centralCache: OctopusCache = null
-  var multilevelCache: OctopusCache = null
+class CachecoolModuleSpec extends PlaySpec with AcceptanceTestSuite {
+  var memoryCache: GenericCache = null
+  var centralCache: GenericCache = null
+  var multilevelCache: GenericCache = null
 
   override def inject(injector: Injector): Unit = {
-    memoryCache = injector.instanceOf(BindingKey(classOf[OctopusCache], Some(QualifierInstance(Names.named("memory")))))
-    centralCache = injector.instanceOf(BindingKey(classOf[OctopusCache], Some(QualifierInstance(Names.named("central")))))
-    multilevelCache = injector.instanceOf(BindingKey(classOf[OctopusCache], Some(QualifierInstance(Names.named("multi-level")))))
+    memoryCache = injector.instanceOf(BindingKey(classOf[GenericCache], Some(QualifierInstance(Names.named("memory")))))
+    centralCache = injector.instanceOf(BindingKey(classOf[GenericCache], Some(QualifierInstance(Names.named("central")))))
+    multilevelCache = injector.instanceOf(BindingKey(classOf[GenericCache], Some(QualifierInstance(Names.named("multi-level")))))
   }
 
   "this test" should {
