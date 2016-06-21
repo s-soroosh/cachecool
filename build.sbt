@@ -4,6 +4,7 @@ fork in Test := true
 
 val scalacacheVersion = "0.7.5"
 val ScalaVersion = "2.11.8"
+val PlayVersion = "2.4.6"
 
 
 lazy val commonSettings =
@@ -45,5 +46,7 @@ lazy val playmodule = (project in file("playmodule"))
   .settings(
     name := "cachecool-play-module",
     libraryDependencies += "com.typesafe.play" %% "play" % "2.4.6",
-    libraryDependencies += "org.scalatestplus" %% "play" % "1.4.0" % "test"
+    libraryDependencies += "org.scalatestplus" %% "play" % "1.4.0" % "test",
+    libraryDependencies += "com.typesafe.play" %% "play-cache" % PlayVersion
+
   )
